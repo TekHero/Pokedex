@@ -41,7 +41,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             musicPlayer.prepareToPlay()
             // Setting the number of loops to -1 causes it to repeat forever
             musicPlayer.numberOfLoops = -1
-            musicPlayer.play()
         } catch let err as NSError {
             print(err.debugDescription)
         }
@@ -139,11 +138,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if musicPlayer.playing {
             musicPlayer.stop()
             // If the music is playing, stop it & set the alpha of the button be faded
-            sender.alpha = 0.2
+            sender.alpha = 1.0
         } else {
             musicPlayer.play()
             // If the music is not playing, play it & set the alpha of the button to be fully opaque
-            sender.alpha = 1.0
+            sender.alpha = 0.2
         }
     }
     
